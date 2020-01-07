@@ -18,12 +18,10 @@ from django.urls import path,include
 from rest_framework import routers
 from main.views import *
 
-router = routers.DefaultRouter()
-router.register(r'in',Signin)
-router.register(r'up',Signup)
 
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-] + router.urls
+	path('api/students/',Studentlist),
+	path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+] 

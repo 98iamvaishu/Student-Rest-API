@@ -3,16 +3,10 @@ from main.models import *
 
 
 
-class SignupSerializer(serializers.ModelSerializer):
+class StudentSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Signup
-        fields = ('first_name', 'last_name', 'organization',
-                  'email', 'password', 'designation')
+        model = Student
+        fields = ('roll_no', 'name', 'age',
+                  'standard')
 
-
-class SigninSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = UserModel
-        fields = ('email', 'password')
